@@ -4,8 +4,7 @@ layout: default
 
 <!-- about.html -->
       <div class="post">
-        <header style="background-image: url('{{ site.baseurl }}/{{ site.header-img }}');">
-          <header class="post-header">
+          <header class="post-header" style="background-image: url('{{ site.baseurl }}/{{ site.header-img }}');">
 
             <h1 class="post-title">
              {{ site.title }}
@@ -13,6 +12,8 @@ layout: default
             <p class="desc">{{ page.subtitle }}</p>
           </header>
         </header>
+      </div>
+        <div class="post">
         <article>
           {% if page.profile -%}
           <div class="profile float-{%- if page.profile.align == 'left' -%}left{%- else -%}right{%- endif -%}">
