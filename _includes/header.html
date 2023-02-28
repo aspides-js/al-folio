@@ -6,19 +6,7 @@
         <div class="container">
           {% if page.permalink != '/' -%}
           <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl }}/">
-            {%- if site.title == "blank" -%}
-              {%- if site.first_name -%}
-                <span class="font-weight-bold">{{- site.first_name -}}&nbsp;</span>
-              {%- endif -%}
-              {%- if site.middle_name -%}
-                {{- site.middle_name -}}&nbsp;
-              {%- endif -%}
-              {%- if site.last_name -%}
-                {{- site.last_name -}}
-              {%- endif -%}
-            {%- else -%}
               {{- site.title -}}
-            {%- endif -%}
           </a>
           {%- elsif site.enable_navbar_social -%}
           <!-- Social Icons -->
@@ -33,6 +21,11 @@
             <span class="icon-bar middle-bar"></span>
             <span class="icon-bar bottom-bar"></span>
           </button>
+
+          <!-- UofE Logo -->
+          <a href="https://medicine.exeter.ac.uk/">
+          <img src="/assets/img/prof_pic.svg" width=150px >
+          </a>
 
           <div class="collapse navbar-collapse text-right" id="navbarNav">
             <ul class="navbar-nav ml-auto flex-nowrap">

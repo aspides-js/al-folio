@@ -3,17 +3,16 @@ layout: default
 ---
 
 <!-- about.html -->
-      <div class="post">
-          <header class="post-header" style="background-image: url('{{ site.baseurl }}/{{ site.header-img }}');">
-
-            <h1 class="post-title">
-             {{ site.title }}
-            </h1>
-            <p class="desc">{{ page.subtitle }}</p>
-          </header>
+        <header class = "intro-header">
+                <div class="header-text">
+                  <h1>
+                   {{ site.title }}
+                  </h1>
+                  <p class="desc">{{ page.subtitle }}</p>
+                </div>
         </header>
-      </div>
         <div class="post">
+
         <article>
           {% if page.profile -%}
           <div class="profile float-{%- if page.profile.align == 'left' -%}left{%- else -%}right{%- endif -%}">
