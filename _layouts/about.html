@@ -45,24 +45,35 @@ layout: default
             <div class = "container">
               {{ content }}
             </div>
-          </div>
+          <!--</div>-->
+
+
 
           <!-- News -->
-        <div class="clearfix">
+
+          <!--<div class="clearfix"> would allow separation of the boxes--> 
           <div class = "container mt-5">
-          {% if page.news -%}
-            <h2><a href="{{ '/news/' | relative_url }}" style="color: inherit;">news</a></h2>
-            {%- include news.html %}
-          {%- endif %}
+            <div class="row">
+              <div class="col">
+                {% if page.news -%}
+                <h2><a href="{{ '/news/' | relative_url }}" style="color: inherit;">news</a></h2>
+                {%- include news.html %}
+                {%- endif %}
+                <br/>
+                <!-- Selected papers -->
+                {% if page.selected_papers -%}
+                  <h2><a href="{{ '/publications/' | relative_url }}" style="color: inherit;">selected publications</a></h2>
+                  {%- include selected_papers.html %}
+                {%- endif %}
 
-          <!-- Selected papers -->
-          {% if page.selected_papers -%}
-            <h2><a href="{{ '/publications/' | relative_url }}" style="color: inherit;">selected publications</a></h2>
-            {%- include selected_papers.html %}
-          {%- endif %}
 
-          <!-- Social -->
-          {%- if page.social %}
+              </div>
+                <div class='jekyll-twitter-plugin' align="right">
+                  {% twitter https://twitter.com/PsyEpigenetics maxwidth=400 limit=2 %}
+                </div>
+            </div>
+            <!-- Social -->
+            {%- if page.social %}
             <div class="social">
               <div class="contact-icons">
                 {% include social.html %}
@@ -74,7 +85,6 @@ layout: default
               
             </div>
           {%- endif %}
-        </div>
-      </div>
+          </div>
         </article>
       </div>
