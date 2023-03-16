@@ -2,10 +2,10 @@
 layout: page
 title: Research
 permalink: /research/
-description: All our research.
+description: Our research aims and interests.
 nav: true
 nav_order: 1
-display_categories: [science]
+display_categories: [science, work, fun]
 horizontal: false
 ---
 

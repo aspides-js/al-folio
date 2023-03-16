@@ -2,9 +2,11 @@
  * Content
  ******************************************************************************/
 
+ // main site content
 body {
   padding: 0;
-  padding-bottom: 70px;
+  margin: 0;
+//  padding-bottom: 70px;
   color: var(--global-text-color);
   background-color: var(--global-bg-color);
   h1, h2, h3, h4, h5, h6 {
@@ -18,6 +20,30 @@ body.sticky-bottom-footer {
 }
 
 
+// About page
+body.about {
+  background-image: url('../img/home-bg.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  padding-bottom: 0;
+  h1, h2, h3, h4, h5, h6 {
+    scroll-margin-top: 66px;
+  }
+}
+
+
+div.clearfix {
+  background-color: var(--global-bg-color);
+  width: 100%; //99.5vw; //$max-content-width;
+  font-size: 120%;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-bottom: 50px;
+  margin-right: 0;
+}
+
 
 // Profile
 .profile {
@@ -26,40 +52,37 @@ body.sticky-bottom-footer {
   }
 }
 
+
 // Nav-bar and headers
 .container {
-//  margin-top: 10px;
+  margin-top: 10px;
   margin-bottom: 10px;
-  max-width: $max-content-width;
+  max-width: $max-article-width;
+//  background-color: var(--global-bg-color);
 }
 
 body.fixed-top-nav {
   // Add some padding for the nav-bar.
-  padding-top: 25px;
+  // this pushes down the position of research and people titles 
+  padding-top: 100px;
 }
 
 
-article {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: $max-article-width;
-  color: var(--global-bg-color);
-}
+
+
+
+//.post-header {
+//  margin-left: 40px;
+//}
 
 // Cover Image 
 header.intro-header {
-  padding-top: -56px;
-  background-image: url('../img/home-bg.jpg');
-  background-color: #cccccc;
-  height: 500px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  height: 99vh; //viewheight
   position: relative;
   margin-bottom: 50px;
   color: var(--global-bg-color);
-  max-width: $max-content-width;
 }
+
 
 .header-text {
   padding: 0;
@@ -69,8 +92,7 @@ header.intro-header {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: var(--global-footer-text-color);
-  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  background: rgba(0, 0, 0, 0.7); /* Black background with 0.7 opacity */
 }
 
 

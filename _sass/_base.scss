@@ -4,13 +4,41 @@
 
 // Typography
 
-header.intro-header {
-  color: var(--global-bg-color);
-}
-
-p, h1, h2, h3, h4, h5, h6, em, div, li, span, strong {
+h1, h2, h3, h4, h5, h6, em, div, li, span, strong {
   color: var(--global-text-color);
 }
+
+// Navbar list and selected pubs
+li {
+  font-size: 120%;
+}
+
+.publications {
+  font-size: 100%;
+}
+
+p {
+  text-align: justify;
+  color: var(--global-text-color);
+  margin-bottom: 0;
+}
+
+// Title of home page (about) 
+h1.site-title {
+  color: var(--global-header-text-color);
+  font-size: 400%;
+}
+
+// site descriptions (underneath site title)
+p.site-desc {
+  text-align: center;
+  color: var(--global-header-text-color);
+}
+
+//controls content of about.md
+//div.clearfix {
+//  font-size: 200%;
+//}
 
 hr {
   border-top: 1px solid var(--global-divider-color);
@@ -75,6 +103,7 @@ blockquote {
 
   .card-title {
     color: var(--global-text-color);
+    font-size: 1.6rem;
   }
 
   .card-item {
@@ -127,7 +156,7 @@ blockquote {
 
 .post-description {
   margin-bottom: 2rem;
-  font-size: 0.875rem;
+  font-size: 1rem;
   a {
     color: inherit;
     &:hover {
@@ -142,9 +171,9 @@ blockquote {
 
 .navbar {
   box-shadow: none;
-  padding: 0;
-  border-bottom: 1px solid var(--global-divider-color);
-  background-color: var(--global-bg-color);
+  padding: 10;
+//  border-bottom: 1px solid var(--global-divider-color);
+  background-color: var(--global-header-bg-color);
   opacity: 0.95;
 }
 .navbar .dropdown-menu {
@@ -296,6 +325,7 @@ footer.fixed-bottom {
 }
 
 footer.sticky-bottom {
+  background-color: var(--global-footer-bg-color);
   border-top: 1px solid var(--global-divider-color);
   padding-top: 40px;
   padding-bottom: 40px;
@@ -456,11 +486,11 @@ footer.sticky-bottom {
   }
 
   h2.category {
-    color: var(--global-divider-color);
+    color: #404549;/*var(--global-divider-color);*/
     border-bottom: 1px solid var(--global-divider-color);
     padding-top: 0.5rem;
     margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1rem; 
     text-align: right;
   }
 }

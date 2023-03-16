@@ -1,0 +1,7 @@
+{%- assign img_path = include.path | remove: ".jpg" | remove: ".jpeg" | remove: ".gif" | remove: ".mp4" -%}
+
+<video height="400" autoplay muted>
+    <source src="{{ include.path | relative_url }}" type="video/mp4">
+</video>
+
+

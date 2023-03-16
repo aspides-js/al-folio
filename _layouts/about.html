@@ -3,47 +3,53 @@ layout: default
 ---
 
 <!-- about.html -->
+      <div class = "header">
         <header class = "intro-header">
                 <div class="header-text">
-                  <h1>
+                  <h1 class="site-title">
                    {{ site.title }}
                   </h1>
-                  <p class="desc">{{ page.subtitle }}</p>
+                  <p class="site-desc">{{ page.subtitle }}</p>
                 </div>
         </header>
-        <div class="post">
+      </div>
 
+      <div class="post">
         <article>
           {% if page.profile -%}
-          <div class="profile float-{%- if page.profile.align == 'left' -%}left{%- else -%}right{%- endif -%}">
-            {%- if page.profile.image %}
-              {%- assign profile_image_path = page.profile.image | prepend: 'assets/img/' -%}
+          <div class = "container">
+            <div class="profile float-{%- if page.profile.align == 'left' -%}left{%- else -%}right{%- endif -%}">
+              {%- if page.profile.video %}
+                {%- assign profile_image_path = page.profile.video | prepend: 'assets/img/' -%}
 
-              {% if page.profile.image_circular %}
-                {%- assign profile_image_class = "img-fluid z-depth-1 rounded-circle" -%}
-              {% else %}
-                {%- assign profile_image_class = "img-fluid z-depth-1 rounded" -%}
-              {% endif %}
+                {% include video.html 
+                path=profile_image_path 
+                class=profile_image_class
+                alt=page.profile.image -%}
 
-              {% include figure.html 
-              path=profile_image_path 
-              class=profile_image_class
-              alt=page.profile.image -%}
-            {% endif -%}
-            {%- if page.profile.address %}
-            <div class="address">
-              {{ page.profile.address }}
+              {%- elsif page.profile.image %}
+
+                {%- assign profile_image_path = page.profile.image | prepend: 'assets/img/' -%}
+                {% include figure.html 
+                  path=profile_image_path 
+                  class=profile_image_class
+                  alt=page.profile.image -%}
+              {% endif -%}
             </div>
-            {%- endif %}
           </div>
           {%- endif %}
 
 
+
           <div class="clearfix">
-            {{ content }}
+            <div class = "container">
+              {{ content }}
+            </div>
           </div>
 
           <!-- News -->
+        <div class="clearfix">
+          <div class = "container mt-5">
           {% if page.news -%}
             <h2><a href="{{ '/news/' | relative_url }}" style="color: inherit;">news</a></h2>
             {%- include news.html %}
@@ -68,6 +74,7 @@ layout: default
               
             </div>
           {%- endif %}
+        </div>
+      </div>
         </article>
-
-</div>
+      </div>

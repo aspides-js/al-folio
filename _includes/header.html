@@ -13,6 +13,8 @@
           <div class="navbar-brand social">
             {% include social.html %}
           </div>
+          {%- else-%}
+          
           {% endif %}
           <!-- Navbar Toggle -->
           <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,8 +26,11 @@
 
           <!-- UofE Logo -->
           <a href="https://medicine.exeter.ac.uk/">
-          <img src="/assets/img/prof_pic.svg" width=150px >
+          <img src="/assets/img/uofelogo.svg" width=150px >
           </a>
+
+          <!--Lab group Logo-->
+          <img src="/assets/img/epigenomicslogo.png" width=150px >
 
           <div class="collapse navbar-collapse text-right" id="navbarNav">
             <ul class="navbar-nav ml-auto flex-nowrap">
@@ -103,12 +108,12 @@
       </nav>
 
 
-{% if site.enable_progressbar %}
-      <!-- Scrolling Progress Bar -->
-      <progress id="progress" value="0">
-        <div class="progress-container">
-          <span class="progress-bar"></span>
-        </div>
-      </progress>
-{%- endif %}
-    </header>
+  {% if site.enable_progressbar %}
+        <!-- Scrolling Progress Bar -->
+        <progress id="progress" value="0">
+          <div class="progress-container">
+            <span class="progress-bar"></span>
+          </div>
+        </progress>
+  {%- endif %}
+</header>
