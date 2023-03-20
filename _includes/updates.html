@@ -1,0 +1,23 @@
+<div class="post">
+    {%- assign post_size = site.posts | size -%}
+    <div class="table-responsive" {% if site.news_scrollable and news_size > 3 %}style="max-height: 10vw"{% endif %}>
+      <table class="update table-sm table-borderless">
+      {%- assign post = site.posts -%}
+      {% if site.news_limit %}
+      {% assign post_limit = site.news_limit %}
+      {% else %}
+      {% assign post_limit = post_size %}
+      {% endif %}
+      {% for item in post limit: post_limit %} 
+      {% assign year = item.date | date: "%Y" %}
+      <tr>
+        <th>{{ item.date | date: "%b %-d, %Y" }}</th>
+        <td>
+            <a class="post-title" href="{{ item.url | prepend: site.baseurl }}">{{ item.title }}</a>
+            <p>{{ item.description }}</p>
+        </td>
+      </tr>
+    {%endfor%}
+    </table>
+    </div>
+  </div>

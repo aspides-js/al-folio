@@ -13,16 +13,6 @@ li.nav-item {
   font-size: 120%;
 }
 
-//selected pubs
-.publications {
-  font-size: 90%;
-}
-
-p {
-  text-align: justify;
-  color: var(--global-text-color);
-  margin-bottom: 0;
-}
 
 // Title of home page (about) 
 h1.site-title {
@@ -36,10 +26,6 @@ p.site-desc {
   color: var(--global-header-text-color);
 }
 
-//controls content of about.md
-//div.clearfix {
-//  font-size: 200%;
-//}
 
 hr {
   border-top: 1px solid var(--global-divider-color);
@@ -58,6 +44,17 @@ a, table.table a {
   color: var(--global-theme-color);
   &:hover {
     color: var(--global-theme-color);
+    text-decoration: underline;
+  }
+  &:hover:after :not(.nav-item.dropdown) {
+    width: 100%;
+  }
+}
+
+.title a, table.update a {
+  color: var(--global-text-color);
+  &:hover {
+    color: var(--global-text-color);
     text-decoration: underline;
   }
   &:hover:after :not(.nav-item.dropdown) {
@@ -125,7 +122,6 @@ blockquote {
 }
 
 // Profile
-
 .profile {
   width: 100%;
 
@@ -327,7 +323,7 @@ footer.fixed-bottom {
 
 footer.sticky-bottom {
   background-color: var(--global-footer-bg-color);
-  border-top: 1px solid var(--global-divider-color);
+//  border-top: 1px solid var(--global-divider-color);
   padding-top: 40px;
   padding-bottom: 40px;
   font-size: 0.9rem;

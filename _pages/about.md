@@ -6,7 +6,8 @@ subtitle: <a href='https://biosciences.exeter.ac.uk/sequencing/'>Exeter Sequenci
 
 profile:
   align: right
-  image: brainRotate.gif
+  gif: brainRotate.gif
+  image: brainslice.png
 
 news: true  # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"

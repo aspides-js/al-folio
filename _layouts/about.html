@@ -27,13 +27,15 @@ layout: default
                 class=profile_image_class
                 alt=page.profile.image -%}
 
-              {%- elsif page.profile.image %}
+              {%- elsif page.profile.gif %}
 
-                {%- assign profile_image_path = page.profile.image | prepend: 'assets/img/' -%}
-                {% include figure.html 
-                  path=profile_image_path 
-                  class=profile_image_class
-                  alt=page.profile.image -%}
+              {%- assign profile_image_path = page.profile.gif | prepend: 'assets/img/' -%}
+              {% include figure.html 
+                path=profile_image_path 
+                class=profile_image_class
+                alt=page.profile.image -%}
+
+
               {% endif -%}
             </div>
           </div>
@@ -45,44 +47,61 @@ layout: default
             <div class = "container">
               {{ content }}
             </div>
-          <!--</div>-->
+          </div>
 
 
 
-          <!-- News -->
+          
 
-          <!--<div class="clearfix"> would allow separation of the boxes--> 
-          <div class = "container mt-5">
-            <div class="row">
-              <div class="col">
-                {% if page.news -%}
-                <h2><a href="{{ '/news/' | relative_url }}" style="color: inherit;">news</a></h2>
-                {%- include news.html %}
-                {%- endif %}
-                <br/>
-                <!-- Selected papers -->
-                {% if page.selected_papers -%}
-                  <h2><a href="{{ '/publications/' | relative_url }}" style="color: inherit;">selected publications</a></h2>
-                  {%- include selected_papers.html %}
-                {%- endif %}
+          <div class="clearfix"> <!-- allow separation of the boxes--> 
+          <div class="news-box">
+            <div class = "container mt-5">
+              <div class="row">
+                <div class="col">
 
+                  <!-- News -->
+                  {% if page.news -%}
+                  <h2><a href="{{ '/news/' | relative_url }}" style="color: inherit;">news</a></h2>
+                  {%- include news.html %}
+                  {%- endif %}
+                  <br/>
+                  
+                  <!--Blog-->
+                  <h2><a href="{{ '/blog/' | relative_url }}" style="color: inherit;">news</a></h2>
+                  {%- include updates.html %}
 
-              </div>
-                <div class='jekyll-twitter-plugin' align="right">
-                  {% twitter https://twitter.com/PsyEpigenetics maxwidth=400 limit=2 %}
+            
+                  <!--Twitter-->
+                  </div>
+                    <div class='jekyll-twitter-plugin' align="right">
+                      {% twitter https://twitter.com/PsyEpigenetics maxwidth=400 limit=2 %}
+                    </div>
                 </div>
+              </div>
             </div>
+
+
+
+
+              <!-- Selected papers -->
+            {% if page.selected_papers -%}
+              <div class = "container mt-5" style="padding-top: 75px;">
+                <h2><a href="{{ '/publications/' | relative_url }}" style="color: inherit;">selected publications</a></h2>
+              </div>
+              {%- include selected_papers.html %}
+            {%- endif %}
             <!-- Social -->
             {%- if page.social %}
-            <div class="social">
-              <div class="contact-icons">
-                {% include social.html %}
+            <div class = "container mt-5">
+              <div class="social">
+                <div class="contact-icons">
+                  {% include social.html %}
+                </div>
               </div>
-
               <div class="contact-note">
-                {{ site.contact_note }}
+                <!--{{ site.contact_note }}-->
               </div>
-              
+            </div>  
             </div>
           {%- endif %}
           </div>
