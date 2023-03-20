@@ -4,17 +4,12 @@
       <!-- Nav Bar -->
       <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}">
         <div class="container">
-          {% if page.permalink != '/' -%}
-          <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl }}/">
-              {{- site.title -}}
-          </a>
-          {%- elsif site.enable_navbar_social -%}
+          {%- if site.enable_navbar_social -%}
           <!-- Social Icons -->
           <div class="navbar-brand social">
             {% include social.html %}
           </div>
           {%- else-%}
-          
           {% endif %}
           <!-- Navbar Toggle -->
           <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,11 +21,13 @@
 
           <!-- UofE Logo -->
           <a href="https://medicine.exeter.ac.uk/">
-          <img src="/assets/img/uofelogo.svg" width=150px >
+            <img src="/assets/img/uofelogo.svg" width=150px >
           </a>
 
           <!--Lab group Logo-->
+          <a href="/">
           <img src="/assets/img/epigenomicslogo.png" width=150px >
+          </a>
 
           <div class="collapse navbar-collapse text-right" id="navbarNav">
             <ul class="navbar-nav ml-auto flex-nowrap">
@@ -42,6 +39,13 @@
               {% endfor %}
 
               <!-- About -->
+              <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
+                <a class="nav-link" href="{{ '/' | relative_url }}">{{ about_title }}
+                  {%- if page.permalink == '/' -%}
+                  <span class="sr-only">(current)</span>
+                  {%- endif -%}
+                </a>
+              </li>
               {% if site.blog_nav_title %}
               <!-- Blog -->
               <li class="nav-item {% if page.url contains 'blog' %}active{% endif %}">
@@ -85,6 +89,7 @@
               {%- endif -%}
               {%- endif -%}
               {% endfor -%}
+
               {%- if site.enable_darkmode %}
 
               <!-- Toogle theme mode -->

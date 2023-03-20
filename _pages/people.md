@@ -4,7 +4,7 @@ title: People
 permalink: /people/
 description: Lab Members
 nav: true
-nav_order: 2
+nav_order: 4
 display_categories: [Current Members, Research Fellows, PhD Students, Research Analysts & Technicians, Affiliated Members, Alumni]
 horizontal: false
 ---

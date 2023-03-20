@@ -6,8 +6,8 @@ nav_order: 6
 dropdown: true
 children: 
     - title: Join Us
-      permalink: /publications/
+      permalink: /joinus/
     - title: divider
     - title: Contact Us
-      permalink: /projects/
+      permalink: /contactus/
 ---
