@@ -6,7 +6,6 @@ description: Research Fellow / Laboratory Manager
 img: assets/img/adam-smith.jpg
 tel: 
 email: A.R.Smith@exeter.ac.uk
-importance: 6  
 category: Research Fellows
 orcid_id: 0000-0001-6495-2711
 linkedin_username:
