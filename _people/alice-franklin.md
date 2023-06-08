@@ -1,7 +1,7 @@
 ---
 layout: page
 person: true
-title: Alice Franklin
+title: Alice Franklin ##does this mess up???
 description: PhD Student
 img: assets/img/alicefranklin.jpg 
 tel: 
